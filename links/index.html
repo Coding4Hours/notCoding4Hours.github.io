@@ -1,6 +1,8 @@
 <input id="input" onkeydown="getFunctions();"/>
 <h3 id="url">Shortend URL</h3>
 <script>
+		function checks() {
+
   var input = document.getElementById("input");
   var short = document.getElementById("url");
   	  	var urlPattern = new RegExp('^(https?:\\/\\/)?'+ // validate protocol
@@ -11,7 +13,6 @@
 	    '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
 	  var isurl = !!urlPattern.test(input);
 	  var ranArray = [checks];
-	function checks() {
   if(isurl == false) {
     input.value = 'https://' + input;
     console.log("url shortend: " + input);
