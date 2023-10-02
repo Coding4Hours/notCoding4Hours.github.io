@@ -1,4 +1,4 @@
-<input id="input"/>
+<input id="input" onkeydown="checks();"/>
 <h3 id="url">Shortend URL</h3>
 <script>
   var input = document.getElementById("input");
@@ -10,6 +10,7 @@
 	    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
 	    '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
 	  var isurl = !!urlPattern.test(input);
+	function checks() {
   if(isurl == false) {
     input.value = 'https://' + input;
     console.log("url shortend: " + input);
@@ -20,4 +21,5 @@
     var $url = "neealdon3.github.io/links/shortend/index.html?" + input;
     short.innerHTML = $url;
   }
+	}
 </script>
