@@ -1,4 +1,4 @@
-<input id="input" onkeydown="checks();"/>
+<input id="input" onkeydown="getFunctions();"/>
 <h3 id="url">Shortend URL</h3>
 <script>
   var input = document.getElementById("input");
@@ -10,6 +10,7 @@
 	    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // validate query string
 	    '(\\#[-a-z\\d_]*)?$','i'); // validate fragment locator
 	  var isurl = !!urlPattern.test(input);
+	  var ranArray = [checks];
 	function checks() {
   if(isurl == false) {
     input.value = 'https://' + input;
@@ -22,4 +23,7 @@
     short.innerHTML = $url;
   }
 	}
+function getFunctions() {
+    return ranArray[Math.floor(Math.random() * ranArray.length)].call();
+  }; 
 </script>
